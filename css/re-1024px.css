@@ -1,6 +1,4 @@
-@charset "utf-8";
-
-@media all and (max-width: 1023px){
+@media (max-width: 1024px){
 
     header .navi li a{
         font-size: 12px;

@@ -1,6 +1,4 @@
-@charset "utf-8";
-
-@media all and (max-width: 767px){
+@media (max-width: 768px){
 
     header{
        position: absolute;
