@@ -1,3 +1,23 @@
+:root {
+  /* Brand Browns */
+  --brand-espresso: #2E2E2C;
+  --brand-grande: #402108;
+  --brand-ristretto: #4B1E0D;
+  /* Premium Golds */
+  --accent-gold: #876C43;
+  --accent-gold-bright: #DDB770;
+  /* Surfaces */
+  --surface-base: #F5F0E9;
+  --surface-alt: #EDE5DC;
+  --surface-cream: #FEFAE0;
+  --surface-card: #FFFFFF;
+  --surface-border-subtle: #C6B9A2;
+  --surface-border-light: #dedede;
+  /* Text aliases */
+  --text-primary: var(--brand-espresso);
+  --text-secondary: var(--brand-grande);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,12 +28,13 @@ body{
     font-family: 'Pretendard';
     word-break: keep-all;
     white-space: normal;
-    color: #333;
+    color:var(--text-primary);
+    background:var(--surface-base);
 }
 a{
     text-decoration: none;
     display: block;
-    color: #333;
+    color:var(--text-primary);
 }
 
 
@@ -83,9 +104,9 @@ header .etc ul li img{
 }
 
 header .active{
-    background-color: #FEFAE0;
+    background-color:var(--brand-grande);
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    border-radius: 0 0 25px 25px;
+    border-radius: 0 0 16px 16px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -95,16 +116,12 @@ header .active{
     -webkit-transition-duration:0.4s;
     -webkit-transition-timing-function:ease;
 }
-header .active .navi li a{
-    color: #333;
-}
-header.active .navi li a:hover {
-    color: #344E41;
+header .active .navi li a:hover {
+    color:var(--accent-gold-bright);
     font-weight: bold;
 }
-header .active #logo img,
-header .active .etc img{
-    filter: none;
+header .active #logo img{
+    filter: invert(100%);
 }
 header .deactive{
     background-color: transparent;
@@ -119,10 +136,12 @@ header .deactive{
 /*main-visual*/
 #main-visual{
     width: 100%;
+    overflow: hidden;
 }
 #main-visual .slide-wrap{
     width: 100%;
     height: 100vh;
+    position: relative;
 }
 #main-visual .slide{
     width: 100%;
@@ -130,6 +149,11 @@ header .deactive{
     top: 0;
     left: 0;
     background-color: transparent;
+    pointer-events: none;
+}
+#main-visual .slide.active {
+    pointer-events: auto;
+    z-index: 2;
 }
 #main-visual .slide img{
     width: 100%;
@@ -141,6 +165,7 @@ header .deactive{
     width: 100%;
     top: 50%;
     left: 6%;
+    z-index: 10;
 }
 #main-visual .slide .inner h1{
     font-size: 44px;
@@ -156,7 +181,7 @@ header .deactive{
     width: 130px;
     border-radius: 25px;
     padding: 10px 0;
-    background-color: #344E41;
+    background-color:var(--accent-gold);
     color: #fff;
     display: block;
     text-align: center;
@@ -165,7 +190,8 @@ header .deactive{
     cursor: pointer;
 }
 #main-visual .slide .inner span:hover {
-    background-color: #588157;
+    background-color:var(--brand-ristretto);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 #main-visual .text01,
 #main-visual .text02{
@@ -173,7 +199,7 @@ header .deactive{
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }
 #main-visual .text03{
-    color: #344E41;
+    color: #2E2E2C;
     text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
 }
 
@@ -181,16 +207,17 @@ header .deactive{
 
 /*sect01*/
 #sect01{
-    background-color: #FEFAE0;
+    background-color:var(--surface-base);
     width: 100%;
+    padding: 100px 5vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #344E41;
+    color:var(--text-secondary);
 }
 #sect01 .text-info{
     width: 40%;
-    margin: auto 5vw;
+    margin-right:5vw;
     text-align: center;
 }
 #sect01 .text-info h1{
@@ -204,7 +231,6 @@ header .deactive{
 }
 #sect01 .slide-wrapper{
     width: 60%;
-    margin: 100px 5vw 50px 0;
 }
 #sect01 .slide-wrapper .cont{
     width: 30%;
@@ -233,15 +259,16 @@ header .deactive{
 }
 #sect01 .slide-wrapper .cont .info span{
     font-size: 12px;
-    border: 1px solid #344E41;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
     border-radius: 25px;
     padding: 5px 20px;
+    transition: all 0.3s ease;
     cursor: pointer;
 }
 #sect01 .slide-wrapper .cont .info span:hover {
-    background-color: #344E41;
+    background-color: var(--accent-gold);
     color: #fff;
-    transition: all 0.3s ease;
 }
 #sect01 .prev,
 #sect01 .next{
@@ -272,9 +299,8 @@ header .deactive{
 }
 #sect02 .inner{
     width: 100%;
-    max-width: 1280px;
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 100px 5vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -284,7 +310,6 @@ header .deactive{
 }
 #sect02 .info{
     width: 40%;
-    margin: auto 10%;
     color: #fff;
 }
 #sect02 .info h3{
@@ -293,9 +318,9 @@ header .deactive{
     letter-spacing: 0.5px;
 }
 .highlight {
-  color: #588157;
-  font-weight: 700;
-  padding: 0 3px;
+    color:var(--accent-gold-bright);
+    font-weight: 700;
+    padding: 0 3px;
 }
 #sect02 .info h1{
     font-size: 36px;
@@ -330,7 +355,7 @@ header .deactive{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
     z-index: 1;
 }
 #sect03 .inner{
@@ -361,10 +386,7 @@ header .deactive{
     font-size: 34px;
     font-weight: 700;
     padding: 8px 0 15px;
-    color: #344E41;
-}
-#sect03 .info .accent {
-  color: #588157;
+    color:var(--brand-ristretto);
 }
 #sect03 .info h3{
     font-size: 16px;
@@ -382,8 +404,8 @@ header .deactive{
     width: 130px;
     border-radius: 25px;
     padding: 10px 0;
-    background-color: #FEFAE0;
-    color: #333;
+    border: 1px solid var(--accent-gold);
+    color: var(--accent-gold);
     display: block;
     text-align: center;
     font-size: 12px;
@@ -391,7 +413,7 @@ header .deactive{
     margin-top: 10px;
 }
 #sect03 .info span:hover {
-    background-color: #588157;
+    background-color: var(--accent-gold);
     color: #fff;
     transition: all 0.3s ease;
 }
@@ -401,7 +423,7 @@ header .deactive{
 /*sect04*/
 #sect04{
     width: 100%;
-    background-color: #E9EDC9;
+    background-color: var(--surface-alt);
 }
 #sect04 .inner{
     width: 80%;
@@ -422,26 +444,30 @@ header .deactive{
 }
 #sect04 .tab__item {
     padding: 10px 20px;
-    border: 1px solid #344E41;
+    border: 1px solid var(--accent-gold);
     border-radius: 25px;
     transition: all 0.3s ease;
 }
 #sect04 .tab__item a{
     font-size: 15px;
-    color: #344E41;
+    color: var(--accent-gold);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 #sect04 .tab__item.active {
     display: inline-block;
-    background-color: #344E41;
+    background-color: var(--accent-gold);
 }
 #sect04 .tab__item.active a {
-    color: #FEFAE0;
+    color:var(--surface-card);
 }
 #sect04 .tab__item:hover {
-    background-color: #D4D8BB;
+    border: 1px solid var(--brand-ristretto);
+    background-color: var(--brand-ristretto);
     transition: 0.3s;
+}
+#sect04 .tab__item:hover a {
+  color: #fff;
 }
 
 
@@ -494,7 +520,7 @@ header .deactive{
     margin: 0 auto;
 }
 #sect04 .box-text{
-    background-color: #fff;
+    background-color:var(--surface-card);
     width: 80%;
     padding: 20px 0;
     margin: auto;
@@ -510,7 +536,7 @@ header .deactive{
     font-size: 13px;
     font-weight: 400;
     text-align: center;
-    color: #344E41;
+    color:var(--eco-green-dark);
     padding: 3px 5px;
 }
 
@@ -565,12 +591,12 @@ header .deactive{
 #sect05 .inner{
     width: 80%;
     max-width: 800px;
-    color: #344E41;
+    color:var(--text-secondary);
 }
 #sect05 .info{
     width: 100%;
     margin: auto;
-    color: #344E41;
+    color:var(--text-secondary);
     text-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 #sect05 .info h1{
@@ -588,12 +614,11 @@ header .deactive{
 /*footer*/
 footer{
     width: 100%;
-    background-color: #344E41;
+    background-color:var(--brand-grande);
 }
 footer .inner{
-    width: 80%;
     margin: auto;
-    padding: 60px 0;
+    padding: 60px 5vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -677,7 +702,7 @@ html.open {
     top: 0px;
     left: -400px;
     z-index: 100;
-    background-color: #FEFAE0;
+    background-color:var(--surface-cream);
     transition: All 0.3s ease;
     padding-top: 50px;
 }
@@ -685,7 +710,7 @@ html.open {
 #menu a{
    padding: 10px 0px;
    font-size: 13px;
-   color: #344E41;
+   color: var(--text-primary);
    line-height:50px;
    text-indent:35px;
    text-align: left;
@@ -706,5 +731,5 @@ html.open {
 }
       
 #menu a:hover {
-    background:#E9EDC9;
+    background-color: var(--surface-alt);
 }
