@@ -14,14 +14,21 @@ jQuery(document).ready(function(){
     });
     
 
-    $('#main-visual .slide-wrap .slide:gt(0)').hide();
-    let i = 0;
-    setInterval(function(){
-        $('.slide').eq(i).fadeOut(1500);
-    i++;
-    i %= 3;
-        $('.slide').eq(i).delay(300).fadeIn(1500);
-    },3000);
+    $('#main-visual .slide-wrap .slide:gt(0)').css('opacity', 0); // 처음엔 첫 슬라이드만 보이게
+        let i = 0;
+        let total = $('.slide').length;
+
+        setInterval(function () {
+            $('.slide').eq(i).animate({ opacity: 0 }, 1500); // 현재 슬라이드 숨김
+
+            i = (i + 1) % total; // 다음 슬라이드 인덱스 계산
+
+            $('.slide').eq(i)
+            .css({ opacity: 0 }) // 미리 투명하게 만들고
+            .animate({ opacity: 1 }, 1500); // 자연스럽게 나타남
+    }, 4000);
+
+    
       
 
 
