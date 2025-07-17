@@ -404,8 +404,9 @@ header .deactive{
     width: 130px;
     border-radius: 25px;
     padding: 10px 0;
+    background-color: var(--accent-gold);
+    color: #fff;
     border: 1px solid var(--accent-gold);
-    color: var(--accent-gold);
     display: block;
     text-align: center;
     font-size: 12px;
@@ -442,32 +443,29 @@ header .deactive{
     align-items: center;
     margin: auto;
 }
-#sect04 .tab__item {
+#sect04 .tab__item button{
+    all: unset;
+    cursor: pointer;
     padding: 10px 20px;
-    border: 1px solid var(--accent-gold);
     border-radius: 25px;
-    transition: all 0.3s ease;
-}
-#sect04 .tab__item a{
-    font-size: 15px;
+    border: 1px solid var(--accent-gold);
+    background-color: transparent;
     color: var(--accent-gold);
-    text-decoration: none;
-    transition: all 0.3s ease;
+    font-size: 15px;
+    font-family: inherit;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-#sect04 .tab__item.active {
-    display: inline-block;
-    background-color: var(--accent-gold);
-}
-#sect04 .tab__item.active a {
-    color:var(--surface-card);
-}
-#sect04 .tab__item:hover {
-    border: 1px solid var(--brand-ristretto);
+#sect04 .tab__item button:hover {
     background-color: var(--brand-ristretto);
-    transition: 0.3s;
+    color: #fff;
+    border: 1px solid var(--brand-ristretto);
 }
-#sect04 .tab__item:hover a {
-  color: #fff;
+#sect04 .tab__item button.active {
+    background-color: var(--accent-gold);
+    color: #fff;
+    border: 1px solid var(--accent-gold);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transform: translateY(-1px);     
 }
 
 

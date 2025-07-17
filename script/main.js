@@ -46,23 +46,19 @@ jQuery(document).ready(function(){
 
 
 
-    const tabItem = document.querySelectorAll(".tab__item");
+    const tabButtons = document.querySelectorAll(".tab__item button");
     const tabContent = document.querySelectorAll(".tab__content");
 
-    tabItem.forEach((item, index) => {
-    item.addEventListener("click", (e) => {
-        
-        e.preventDefault(); 
-        
-        tabContent.forEach((content) => {
-        content.classList.remove("active");
-        });
+    tabButtons.forEach((btn, index) => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-        tabItem.forEach((content) => {
-        content.classList.remove("active");
-        });
+        // 버튼 active 관리
+        tabButtons.forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
 
-        tabItem[index].classList.add("active");
+        // 탭 콘텐츠 active 관리
+        tabContent.forEach((content) => content.classList.remove("active"));
         tabContent[index].classList.add("active");
     });
     });
