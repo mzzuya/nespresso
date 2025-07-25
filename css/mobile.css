@@ -119,8 +119,11 @@
     #sect05 .inner{
         width: 90%;
     }
+    #sect05 .info h1{
+        font-size: 22px;
+    }
     #sect05 .info p{
-        width: 70%;
+        width: 90%;
         margin: 0 auto;
     }
 }
