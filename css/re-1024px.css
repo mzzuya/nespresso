@@ -1,3 +1,34 @@
 @media (max-width: 1024px){
+    header .navi{
+        display: flex;
+        gap: 38px;
+    }
+    header .etc ul li img{
+        width: 22px;
+        height: 22px;
+    }
 
+    #main-visual .slide .inner h1{
+        font-size: 36px;
+    }
+    #main-visual .slide .inner p{
+        font-size: 16px;
+    }
+
+    #sect01 .text-info h1{
+        font-size: 25px;
+    }
+    #sect01 .text-info p{
+        font-size: 14px;
+    }
+
+    #sect03 .info h2{
+        font-size: 18px;
+    }
+    #sect03 .info h1{
+        font-size: 28px;
+    }
+    #sect03 .info h3{
+        font-size: 14px;
+    }
 }

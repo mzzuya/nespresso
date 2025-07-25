@@ -39,6 +39,14 @@ jQuery(document).ready(function(){
       autoplaySpeed : 2000 ,
       infinite: true ,
       slidesToShow: 3,
+      responsive: [
+        {
+        breakpoint: 426,
+        settings: {
+            slidesToShow: 1
+        }
+        }
+      ],
       nextArrow:$('.next'),
       prevArrow:$('.prev')
     });

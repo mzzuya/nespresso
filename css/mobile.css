@@ -1,3 +1,126 @@
 @media (max-width: 425px){
+    header .inner{
+        display: block;
+        padding: 3.5vw 0;
+    }
+    header .etc{
+        display: none;
+        flex: 0;
+    }
 
+    #menu .mobile-etc{
+        display: flex;
+    }
+
+    #main-visual .slide-wrap{
+        height: 60vh;
+    }
+    #main-visual .slide img{
+        height: 60vh;
+    }
+    #main-visual .slide .inner{
+        width: 90%;
+        top: 63%;
+        text-align: center;
+    }
+    #main-visual .slide .inner h1{
+        font-size: 22px;
+        padding-bottom: 15px;
+    }
+    #main-visual .slide .inner p{
+        display: none;
+    }
+    #main-visual .slide .inner span{
+        margin: 0 auto;
+        width: 110px;
+    }
+
+
+    #sect01 .slide-wrapper .cont{
+        width: 100%;
+    }
+    #sect01 .slide-wrapper .cont img {
+        margin: 0 auto;
+    }
+    #sect01 .slide-wrapper .cont .info{
+        width: 100%;
+        text-align: center;
+        margin: 10px 0 20px;
+    }
+    #sect01 .slide-wrapper .cont .info h1 {
+        font-size: 18px;
+        padding-bottom: 15px;
+    }
+    #sect01 .slide-wrapper .cont .info p {
+        display: none;
+    };
+
+
+    #sect02 .inner{
+        display: block;
+    }
+    #sect02 .info{
+        width: 100%;
+    }
+
+
+    #sect03 .inner{
+        width: 90%;
+    }
+    #sect03 .inner img,
+    #sect03 .inner .info{
+        width: 100%;
+    }
+    #sect03 .info>span{
+        width: 110px;
+        font-size: 12px;
+        margin: 10px auto;
+    }
+
+
+    #sect04 .inner{
+        width: 90%;
+    }
+    #sect04 .inner>h1{
+        font-size: 18px;
+    }
+    #sect04 .tab{
+        flex-direction: column;
+        gap: 8px;
+    }
+    #sect04 .tab__item button{
+        font-size: 13px;
+    }
+    #sect04 .cont_box{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    #sect04 .box{
+        width: 90%;
+    }
+    #sect04 .tab3-box{
+        width: 100%;
+    }
+    #sect04 .tab3-box p{
+        font-size: 16px;
+    }
+    #sect04 .tab3-box .search{
+        width: 80%;
+        height: 40px;
+    }
+    #sect04 .tab3-box .search img{
+        width: 25px;
+        height: 25px;
+        margin: 6px 15px;
+    }
+
+
+    #sect05 .inner{
+        width: 90%;
+    }
+    #sect05 .info p{
+        width: 70%;
+        margin: 0 auto;
+    }
 }

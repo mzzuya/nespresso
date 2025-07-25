@@ -45,6 +45,7 @@ header{
 	position: fixed;
 	top: 0;
 	z-index: 30;
+    overflow: hidden;
 }
 header .inner{
     width: 100%;
@@ -82,6 +83,7 @@ header #logo{
 header #logo img{
     object-fit: cover;
     filter: invert(100%);
+    display: block;
 }
 header .etc{
     flex: 1;
@@ -89,18 +91,15 @@ header .etc{
     justify-content: flex-end;
     align-items: center;
 }
-header .etc img{
-    filter: invert(100%);
-}
 header .etc ul{
     display: flex;
-}
-header .etc ul li{
-    margin-left: 20px;
+    gap: 20px;
 }
 header .etc ul li img{
     width: 26px;
     height: 26px;
+    display: block;
+    filter: invert(100%);
 }
 
 header .active{
@@ -175,7 +174,7 @@ header .deactive{
     font-size: 18px;
     font-weight: 400;
     padding: 20px 0;
-    line-height: 30px;
+    line-height: 1.8;
 }
 #main-visual .slide .inner span{
     width: 130px;
@@ -217,11 +216,11 @@ header .deactive{
 }
 #sect01 .text-info{
     width: 40%;
-    margin-right:5vw;
+    margin-right: 5vw;
     text-align: center;
 }
 #sect01 .text-info h1{
-    font-size: 29px;
+    font-size: 28px;
     font-weight: 600;
 }
 #sect01 .text-info p{
@@ -391,14 +390,14 @@ header .deactive{
 #sect03 .info h3{
     font-size: 16px;
     font-weight: 400;
-    color: #555;
     line-height: 28px;
 }
 #sect03 .info h5{
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 20px;
     padding: 10px 0;
+    color: #555;
 }
 #sect03 .info>span{
     width: 130px;
@@ -409,7 +408,7 @@ header .deactive{
     border: 1px solid var(--accent-gold);
     display: block;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     cursor: pointer;
     margin-top: 10px;
 }
@@ -627,9 +626,7 @@ footer .foot-nav{
 }
 footer .foot-nav>ul{
     display: flex;
-}
-footer .foot-nav>ul>li{
-    padding-right: 15%;
+    gap: 50px;
 }
 footer .foot-nav a{
     padding-bottom: 10px;
@@ -637,7 +634,7 @@ footer .foot-nav a{
 }
 footer .foot-nav .submenu{
     line-height: 1.6;
-    opacity: 0.9;
+    opacity: 0.8;
 }
 footer .foot-info{
     width: 50%;
@@ -652,82 +649,102 @@ footer .foot-info{
 
 
 /*ham*/
-html.open {
-    overflow: hidden;
+html, body {
+    overflow-x: hidden;
+    width: 100%;
 }
-  
+html.open, body.open {
+    overflow: hidden;
+    height: 100%;
+}
 #menu.open {
     left: 0px;
+    transition: all 0.3s ease;
 }
-  
+.page_cover{
+    display: none;
+}
 .page_cover.open {
     display: block;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: fixed;
+    background: rgba(0,0,0,0.3);
 }
-  
 .btn {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     position: absolute;
-    left: 5%;
+    left: 2%;
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
-    background-image: url("../img/btn.png");
+    background-image: url("../img/btn.svg");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
     display: none;
 }
-  
 .close {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     position: absolute;
-    left: 20%;
-    top: 22px;
-    background-image: url("../img/close.png");
-    background-size: 70%;
+    left: 6%;
+    top: 2.5%;
+    background-image: url("../img/close.svg");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    display: none;
 }
-  
 #menu {   
     width: 150px;
     height: 100%;
     position: fixed;
     top: 0px;
-    left: -400px;
+    left: -150px;
     z-index: 100;
-    background-color:var(--surface-cream);
-    transition: All 0.3s ease;
+    background-color:var(--surface-base);
+    transition: all 0.3s ease;
     padding-top: 50px;
+    display: none;
 }
-  
-#menu a{
+#menu .mobile-nav a{
    padding: 10px 0px;
-   font-size: 13px;
-   color: var(--text-primary);
-   line-height:50px;
-   text-indent:35px;
+   font-size: 14px;
+   color: var(--brand-espresso);
+   line-height:3;
+   text-indent:18px;
    text-align: left;
    font-weight:bold; 
+   transition: color 0.3s ease;
 }
-  
 #menu.open {
     left: 0px;
 }
-  
-.page_cover.open {
-    display: block;
-}
-  
-#menu ul { 
+#menu .mobile-nav { 
     width:150px; 
     margin:30px 0; 
-}
-      
+}   
 #menu a:hover {
-    background-color: var(--surface-alt);
+    color: var(--accent-gold-bright);
+}
+#menu .mobile-etc{
+    display: none;
+    justify-content: center;
+    gap: 12px;
+    padding: 30px 18px;
+    border-top: 1px solid var(--surface-border-light);
+}
+#menu .mobile-etc a{
+    padding: 0 5px;
+    
+}
+#menu .mobile-etc img{
+    width: 22px;
+    height: 22px;
+    display: block;
 }

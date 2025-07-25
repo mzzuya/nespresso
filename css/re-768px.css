@@ -1,3 +1,113 @@
 @media (max-width: 768px){
+    .btn,
+    .close,
+    #menu,
+    .page_cover {
+        display: block;
+    }
 
+    header .navi{
+        display: none;
+    }
+    .mobile-etc{
+        display: none;
+    }
+
+    #main-visual .slide .inner h1{
+        font-size: 28px;
+    }
+    #main-visual .slide .inner p{
+        font-size: 13px;
+    }
+    #main-visual .slide .inner span{
+        font-size: 12px;
+    }
+
+    #sect01{
+        flex-direction: column;
+        gap: 53px;
+    }
+    #sect01 .text-info{
+        width: 90%;
+        margin: 0;
+    }
+    #sect01 .slide-wrapper{
+        width: 100%;
+    }
+    #sect01 .sect01-btn{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+    }
+
+    #sect02 .bg{
+        padding: 0;
+    }
+    #sect02 .info{
+        width: 55%;
+    }
+    #sect02 .info h3{
+        font-size: 14px;
+    }
+    #sect02 .info h1{
+        font-size: 28px;
+    }
+    #sect02 .info p{
+        font-size: 13px;
+    }
+
+
+    #sect03 .inner{
+        flex-direction: column;
+        gap: 53px;
+    }
+    #sect03 .inner img,
+    #sect03 .inner .info{
+        width: 80%;
+    }
+
+    
+    #sect04 .inner{
+        width: 95%;
+    }
+    #sect04 .inner>h1{
+        font-size: 24px;
+    }
+    #sect04 .tab{
+        width: 60%;
+    }
+    #sect04 .box img,
+    #sect04 .box-text{
+        width: 90%;
+    }
+    #sect04 .box-text>h1,
+    #sect04 .box-text h3{
+        font-size: 12px;
+    }
+    #sect04 .tab3-box p{
+        font-size: 18px;
+    }
+
+
+    #sect05 .info h1{
+        font-size: 28px;
+    }
+    #sect05 .info p{
+        font-size: 13px;
+    }
+
+
+    footer .inner{
+        justify-content: center;
+    }
+    footer .foot-nav{
+        display: none;
+    }
+    footer .foot-info{
+        width: 100%;
+        text-align: center;
+    }
+    footer .foot-info p{
+        display: none;
+    }
 }
