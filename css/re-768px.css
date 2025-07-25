@@ -35,9 +35,7 @@
         width: 100%;
     }
     #sect01 .sect01-btn{
-        display: flex;
         justify-content: center;
-        gap: 5px;
     }
 
     #sect02 .bg{

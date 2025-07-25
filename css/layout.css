@@ -269,6 +269,10 @@ header .deactive{
     background-color: var(--accent-gold);
     color: #fff;
 }
+#sect01 .sect01-btn{
+    display: flex;
+    gap: 5px;
+}
 #sect01 .prev,
 #sect01 .next{
     cursor: pointer;
