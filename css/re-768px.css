@@ -37,6 +37,10 @@
     #sect01 .sect01-btn{
         justify-content: center;
     }
+    header .etc ul li img{
+        width: 18px;
+        height: 18px;
+    }
 
     #sect02 .bg{
         padding: 0;

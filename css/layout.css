@@ -81,9 +81,8 @@ header #logo{
     justify-content: center;
 }
 header #logo img{
-    object-fit: cover;
-    filter: invert(100%);
-    display: block;
+    width: clamp(80px, 30vw, 150px);
+    height: auto;
 }
 header .etc{
     flex: 1;
@@ -96,10 +95,9 @@ header .etc ul{
     gap: 20px;
 }
 header .etc ul li img{
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     display: block;
-    filter: invert(100%);
 }
 
 header .active{
@@ -118,9 +116,6 @@ header .active{
 header .active .navi li a:hover {
     color:var(--accent-gold-bright);
     font-weight: bold;
-}
-header .active #logo img{
-    filter: invert(100%);
 }
 header .deactive{
     background-color: transparent;
@@ -272,6 +267,10 @@ header .deactive{
 #sect01 .sect01-btn{
     display: flex;
     gap: 5px;
+}
+#sect01 .sect01-btn img{
+    width: 28px;
+    height: 28px;
 }
 #sect01 .prev,
 #sect01 .next{
@@ -751,4 +750,5 @@ html.open, body.open {
     width: 22px;
     height: 22px;
     display: block;
+    filter: invert(100%);
 }
